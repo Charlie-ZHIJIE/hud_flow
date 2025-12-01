@@ -1,0 +1,19 @@
+[project]
+name = "crc32-problem"
+version = "0.1.0"
+description = "CRC-32 Slicing Algorithm Problem for HUD Evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cocotb>=2.0.0",
+    "pytest>=7.0.0",
+    "pytest-timeout>=2.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+# Timeout for the entire pytest run (in seconds of REAL time)
+# This is a fallback - the TimeoutRunner in the test handles the primary timeout
+timeout = 10
+

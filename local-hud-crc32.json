@@ -1,0 +1,37 @@
+[
+  {
+    "id": "slicing_crc",
+    "prompt": "",
+    "setup_tool": {
+      "name": "setup_problem",
+      "arguments": {
+        "problem_id": "slicing_crc"
+      }
+    },
+    "evaluate_tool": {
+      "name": "grade_problem",
+      "arguments": {
+        "problem_id": "slicing_crc",
+        "transcript": "dummy transcript"
+      }
+    },
+    "agent_config": {
+      "allowed_tools": [
+        "str_replace_based_edit_tool",
+        "grade_problem",
+        "debug_test_results"
+      ]
+    },
+    "mcp_config": {
+      "local": {
+        "command": "docker",
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "verilog_crc32:latest"
+        ]
+      }
+    }
+  }
+]
