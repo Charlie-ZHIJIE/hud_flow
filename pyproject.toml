@@ -1,0 +1,27 @@
+[project]
+name = "hud-mac-rx"
+version = "0.1.0"
+description = "HUD Controller for MAC RX Stream Verilog Problem Evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "cocotb>=1.8.0",
+    "pytest>=7.0.0",
+    "click>=8.0.0",
+    "pydantic>=2.0.0",
+    "numpy>=1.20.0",
+    "defusedxml>=0.7.0",
+]
+
+[project.scripts]
+hud-mac-rx = "hud_controller.app:main"
+setup-problem = "hud_controller.app:setup_problem_script"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hud_controller"]
+

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "rx_mac_stream",
+    "prompt": "",
+    "setup_tool": {
+      "name": "setup_problem",
+      "arguments": {
+        "problem_id": "rx_mac_stream"
+      }
+    },
+    "evaluate_tool": {
+      "name": "grade_problem",
+      "arguments": {
+        "problem_id": "rx_mac_stream",
+        "transcript": "dummy transcript"
+      }
+    },
+    "agent_config": {
+      "allowed_tools": [
+        "str_replace_based_edit_tool",
+        "grade_problem",
+        "debug_test_results"
+      ]
+    },
+    "mcp_config": {
+      "local": {
+        "command": "docker",
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "hud-mac-rx:latest"
+        ]
+      }
+    }
+  }
+]
