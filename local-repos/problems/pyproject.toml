@@ -1,0 +1,5 @@
+[project]
+name = "simple-adder-problem"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["cocotb>=2.0.0", "pytest>=7.0.0"]
