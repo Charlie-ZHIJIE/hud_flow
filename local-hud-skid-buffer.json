@@ -1,0 +1,39 @@
+[
+  {
+    "id": "skid_buffer",
+    "prompt": "",
+    "setup_tool": {
+      "name": "setup_problem",
+      "arguments": {
+        "problem_id": "skid_buffer"
+      }
+    },
+    "evaluate_tool": {
+      "name": "evaluate_problem",
+      "arguments": {
+        "problem_id": "skid_buffer",
+        "transcript": "dummy transcript",
+        "reward_mode": "fine_grained"
+      }
+    },
+    "agent_config": {
+      "allowed_tools": [
+        "str_replace_based_edit_tool",
+        "grade_problem",
+        "debug_test_results"
+      ]
+    },
+    "mcp_config": {
+      "local": {
+        "command": "docker",
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "verilog_skid_buffer:latest"
+        ]
+      }
+    }
+  }
+]
+

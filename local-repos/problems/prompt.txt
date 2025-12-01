@@ -1,0 +1,15 @@
+Implement a parameterized dual-mode ready/valid decoupling buffer for AXI-Stream interfaces.
+
+Parameters:
+- DATA_WIDTH (default 64): Data path width
+- BYPASS (default 1): Operating mode (0=FIFO, 1=Bypass)
+- DEPTH (default 2): Buffer depth (used in FIFO mode)
+
+Requirements:
+- Support two operating modes based on BYPASS parameter
+- Preserve strict FIFO ordering (no data loss or duplication)
+- Asynchronous reset (`rst_n`, active-low) clears all buffers
+- Handle back-pressure via ready/valid handshaking
+- Support variable buffer depths (not hardcoded)
+
+See docs/Specification.md for complete behavioral specification and test coverage.
